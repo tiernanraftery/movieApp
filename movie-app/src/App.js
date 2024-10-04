@@ -1,5 +1,9 @@
 import logo from './logo.svg';
+import Header from './components/Header';
+import Content from './components/content';
+import Footer from './components/Footer';
 import './App.css';
+ {/*import the files from component file */}
 
 function App() {
   return (

@@ -4,6 +4,7 @@ import Content from './components/content';
 import Footer from './components/Footer';
 import './App.css';
  {/*import the files from component file */}
+ 
 
 function App() {
   return (

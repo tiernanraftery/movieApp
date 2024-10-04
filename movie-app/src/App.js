@@ -9,6 +9,9 @@ function App() {
     <Router>
       <NavigationBar />
       <Routes>
+        {/* footer compent changes with URL
+        client side routing allows your app 
+        to update the URL from a link*/}
         <Route path="/home" element={<Content />} />
         <Route path="/read" element={<Footer />} />
         <Route path="/create" element={<Header/>} />

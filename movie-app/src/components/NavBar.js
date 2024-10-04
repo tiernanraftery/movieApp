@@ -4,9 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 const NavigationBar = () => {
+
   return (
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
+            {/*make the navbar and have them link to each otehr */}
             <Navbar.Brand href="/">Navbar</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>

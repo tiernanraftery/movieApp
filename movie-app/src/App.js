@@ -3,6 +3,7 @@ import NavigationBar from './components/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/content';
+import Read from './components/read';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         client side routing allows your app 
         to update the URL from a link*/}
         <Route path="/home" element={<Content />} />
-        <Route path="/read" element={<Footer />} />
+        <Route path="/read" element={<Read/>} />
         <Route path="/create" element={<Header/>} />
       </Routes>
     </Router>

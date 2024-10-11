@@ -29,7 +29,7 @@ const Read = () => {
     return (
         
         <div>
-            <h3>Hello from Read component</h3>;
+            <h3>Hello from Read component</h3>
 
             <Movies myMovies={data}/>
         </div>

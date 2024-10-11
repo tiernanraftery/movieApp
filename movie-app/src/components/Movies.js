@@ -7,7 +7,7 @@ const Movies =(props)=>{
     return props.myMovies.map(
         (Movies)=>{
             //pass in indivual movies
-            return<MovieItem myMovie={Movies}/>
+            return<MovieItem myMovie={Movies} key={Movies.IMDBID}/>
         }
     )
 

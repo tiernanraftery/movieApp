@@ -1,7 +1,9 @@
 //Read.js
 
 import Movies from "./Movies";
+//allows you to add state variables to functional components
 import { useEffect, useState } from "react";
+//allows you to send asynchronous HTTP requests
 import axios from "axios";
 
 function Read() {

@@ -14,6 +14,17 @@ app.use(function(req, res, next) {
   next();
 });
 
+//added body parser middleware
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//recieves the data from the client
+app.post('/api/movies', (req, res) => {
+    console.log("Movie:" + req.body.title);
+    res.send("Movie Recieved");
+});
+
 //add new api layout
 app.get('/api/movies', (req, res) => {
     const movies = [

@@ -50,6 +50,16 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 
+app.get('/api/movies', async (req, res) => {
+  const movies = await Movie.find({});
+  res.status(200).json({movies});
+});
+
+app.get('/api/movie/:id', async (req, res) => {
+  const movie = await movieModel.findById(req.params.id);
+  res.send(movie);
+});
+
 //add new api layout
 app.get('/api/movies', (req, res) => {
     const movies = [

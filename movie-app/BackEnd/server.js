@@ -16,14 +16,39 @@ app.use(function(req, res, next) {
 
 //added body parser middleware
 const bodyParser = require('body-parser');
+const { default: mongoose } = require('mongoose');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+//Connect to MongoDB 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://admin:admin@cluster0.pbw30.mongodb.net/');
+
+
 //recieves the data from the client
+//Add Data to MongoDB
+//Create a method to add new movie records:
 app.post('/api/movies', (req, res) => {
-    console.log("Movie:" + req.body.title);
-    res.send("Movie Recieved");
+  console.log("Movie:" + req.body.title);
+  res.send("Movie Recieved");
+
+  const newMovie = new movieModel({title, year,poster});
+  newMovie.save();
+
+  res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
+
 });
+
+const movieModel = new mongoose.model('myMovies', movieSchema)
+//Define schema and data model:
+const movieSchema = new mongoose.Schema({
+  title: String,
+  year: String,
+  poster: String
+});
+
+const Movie = mongoose.model('Movie', movieSchema);
 
 //add new api layout
 app.get('/api/movies', (req, res) => {
@@ -31,7 +56,7 @@ app.get('/api/movies', (req, res) => {
         {
             "Title": "Avengers: Infinity War (server)",
             "Year": "2018",
-            "imdbID": "tt4154756",
+            "imdbID": "tt4154756",  
             "Type": "movie",
             "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
           },
